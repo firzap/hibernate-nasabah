@@ -1,6 +1,7 @@
 package com.gmail.faddikha.bankhibernate.entity;
 
 import java.sql.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,16 +12,37 @@ public class Nasabah {
     
     ///////////////////////////////form atas
     @Id
+    @Column(name = "id_cif")
     private int noCif;
+    
+    @Column(name = "cabang")
     private String cabang;
+    
+    @Column(name = "acc_officer")
     private String accOfficer;
+    
+    @Column(name = "nama_lengkap")
     private String namaLengkap;
+    
+    @Column(name = "nama_singkat")
     private String namaSingkat;
+    
+    @Column(name = "nama_alias")
     private String namaAlias;
+    
+    @Column(name = "nama_ibu")
     private String namaIbu;
+    
+    @Column(name = "jk")
     private char jenisKelamin;
+    
+    @Column(name = "tempat_lahir")
     private String tempatLahir;
+    
+    @Column(name = "tgl_lahir")
     private Date tglLahir;
+    
+    @Column(name = "tgl_buka_rek")
     private Date tglBukaRek;
     
     /////////////////////////////form tengah
