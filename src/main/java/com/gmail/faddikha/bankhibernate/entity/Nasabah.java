@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "master_nasabah", schema = "public")
+@Table(name = "master_nasabah")
 public class Nasabah {
     
     ///////////////////////////////form atas
@@ -46,22 +46,50 @@ public class Nasabah {
     private Date tglBukaRek;
     
     /////////////////////////////form tengah
+    @Column(name = "jenis_id")
     private String jenisId;
-    private int noId;
-    private String alamat;
-    private int rt;
-    private int rw;
-    private String kel;
-    private String kec;
-    private String kab;
-    private String prov;
-    private String negara;
-    private Date masaBerlaku;
-    private int kodePos;
     
-    /////////////////////////////form bawah
-    private int npwp;
-    private int noHp;
+    @Column(name = "no_id")
+    private String noId;
+    
+    @Column(name = "alamat")
+    private String alamat;
+    
+    @Column(name = "rt")
+    private int rt;
+    
+    @Column(name = "rw")
+    private int rw;
+    
+    @Column(name = "kel")
+    private String kel;
+    
+    @Column(name = "kec")
+    private String kec;
+    
+    @Column(name = "kab")
+    private String kab;
+    
+    @Column(name = "prov")
+    private String prov;
+    
+    @Column(name = "negara")
+    private String negara;
+    
+    @Column(name = "masa_berlaku")
+    private Date masaBerlaku;
+    
+    @Column(name = "kode_pos")
+    private String kodePos;
+    
+    /////////////////////////////form bawah    
+    @Column(name = "npwp")
+    private String npwp;
+    
+    @Column(name = "no_hp")
+    private String noHp;
+    
+    @Column(name = "ket")
     private String ket;
 
     public int getNoCif() {
@@ -160,11 +188,11 @@ public class Nasabah {
         this.jenisId = jenisId;
     }
 
-    public int getNoId() {
+    public String getNoId() {
         return noId;
     }
 
-    public void setNoId(int noId) {
+    public void setNoId(String noId) {
         this.noId = noId;
     }
 
@@ -240,27 +268,27 @@ public class Nasabah {
         this.masaBerlaku = masaBerlaku;
     }
 
-    public int getKodePos() {
+    public String getKodePos() {
         return kodePos;
     }
 
-    public void setKodePos(int kodePos) {
+    public void setKodePos(String kodePos) {
         this.kodePos = kodePos;
     }
 
-    public int getNpwp() {
+    public String getNpwp() {
         return npwp;
     }
 
-    public void setNpwp(int npwp) {
+    public void setNpwp(String npwp) {
         this.npwp = npwp;
     }
 
-    public int getNoHp() {
+    public String getNoHp() {
         return noHp;
     }
 
-    public void setNoHp(int noHp) {
+    public void setNoHp(String noHp) {
         this.noHp = noHp;
     }
 
