@@ -31,8 +31,8 @@ public class NasabahDao {
     }
     
     @Transactional
-    public String delete(Nasabah nasabah){
-        this.sessionFactory.getCurrentSession().delete(nasabah);
+    public String delete(int nasabah){
+        this.sessionFactory.getCurrentSession().delete(findById(nasabah));
         return "Hapus sukses!";
     }
     

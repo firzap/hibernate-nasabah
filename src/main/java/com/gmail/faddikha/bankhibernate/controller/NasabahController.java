@@ -4,6 +4,7 @@ import com.gmail.faddikha.bankhibernate.entity.Nasabah;
 import com.gmail.faddikha.bankhibernate.repository.NasabahDao;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/nasabah")
+@CrossOrigin( origins = "http://localhost:4200")
 public class NasabahController {
     
     @Autowired
@@ -38,9 +40,9 @@ public class NasabahController {
         return this.nasabahDao.update(nasabah);
     }
     
-    @PostMapping("/dihapus")
-    public String remove(@RequestBody Nasabah nasabah){
-        this.nasabahDao.delete(nasabah);
-        return "Data berhasil dihapus, Gan!";
+    @PostMapping("{noCif}/dihapus")
+    public String remove(@PathVariable int noCif){
+        this.nasabahDao.delete(noCif);
+        return "{ \"message\" : \"Data berhasil dihapus, Gan!\"}";
     }
 }
